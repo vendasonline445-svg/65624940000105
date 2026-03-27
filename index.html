@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Serraria Têxtil & Ateliê. Especialistas em confecção sob medida, acabamento têxtil de alta resolução e locação de vestuário premium em Maceió - AL.">
+    <title>Serraria Têxtil | Confecção, Acabamento e Locação Premium</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { --st-dark: #1A1A1A; --st-gold: #C5A880; --st-light: #F9F8F6; --st-text: #4A4A4A; }
+        body { font-family: 'Lato', sans-serif; color: var(--st-text); background-color: var(--st-light); overflow-x: hidden; }
+        h1, h2, h3, h4, .navbar-brand { font-family: 'Playfair Display', serif; }
+        
+        /* Navbar Boutique */
+        .navbar { background: rgba(255, 255, 255, 0.98); padding: 20px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.03); }
+        .navbar-brand { font-weight: 700; color: var(--st-dark) !important; font-size: 1.6rem; letter-spacing: 2px; text-transform: uppercase; }
+        .navbar-brand span { color: var(--st-gold); }
+        .nav-link { font-weight: 400; color: var(--st-dark); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 12px; transition: 0.3s; }
+        .nav-link:hover { color: var(--st-gold); }
+
+        /* Dobra 1: Hero Fashion/Industrial */
+        .hero { 
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.8)), url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=1920&q=80') center/cover;
+            padding: 170px 0 140px; color: white; text-align: center;
+        }
+        .hero-subtitle { font-family: 'Lato'; font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: var(--st-gold); margin-bottom: 20px; display: block; }
+        .btn-gold { background: var(--st-gold); color: white; font-weight: 700; padding: 15px 35px; border-radius: 0; border: 1px solid var(--st-gold); transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .btn-gold:hover { background: transparent; color: var(--st-gold); }
+
+        /* Dobra 2: O Ateliê */
+        .atelie-section { padding: 110px 0; background: white; }
+        .atelie-text { padding-right: 40px; }
+        .img-stack { position: relative; }
+        .img-stack img { border-radius: 4px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+
+        /* Dobra 3: Serviços (Alinhado aos CNAEs + B2B) */
+        .services-section { padding: 100px 0; background: var(--st-light); }
+        .service-card { 
+            background: white; padding: 50px 40px; text-align: center; 
+            transition: 0.4s; height: 100%; border: 1px solid #eee;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--st-gold); }
+        .s-icon { font-size: 40px; color: var(--st-gold); margin-bottom: 25px; }
+
+        /* Dobra 4: Estrutura & B2B */
+        .b2b-section { background: var(--st-dark); color: white; padding: 90px 0; text-align: center; }
+        .b2b-section h3 { color: var(--st-gold); font-size: 2rem; margin-bottom: 20px; }
+
+        /* Dobra 5: Contato e Mapa */
+        .contact-section { padding: 100px 0; background: white; }
+        .form-control { border-radius: 0; border: none; border-bottom: 1px solid #ccc; padding: 15px 0; margin-bottom: 25px; background: transparent; }
+        .form-control:focus { box-shadow: none; border-bottom-color: var(--st-gold); }
+        .map-box { height: 100%; min-height: 450px; background: #eee; border-radius: 4px; overflow: hidden; }
+
+        /* Footer */
+        footer { background: #111; color: #888; padding: 80px 0 30px; font-size: 0.85rem; }
+        footer h5 { color: white; font-weight: 700; margin-bottom: 25px; font-family: 'Lato'; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; }
+        .footer-links a { color: #888; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
+        .footer-links a:hover { color: var(--st-gold); }
+        .copyright { border-top: 1px solid #222; margin-top: 60px; padding-top: 25px; text-align: center; font-size: 0.8rem; }
+
+        /* Elementos Fixos */
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.15); transition: 0.3s; text-decoration: none; }
+        .wa-float:hover { transform: scale(1.1); color: white; }
+        
+        #cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--st-dark); color: white; padding: 20px 0; z-index: 9999; border-top: 2px solid var(--st-gold); }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/5582999999999" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Serraria <span>Têxtil</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#atelie">O Ateliê</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Confecção & Acabamento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Agendamento</a></li>
+                </ul>
+                <a href="#contato" class="btn btn-outline-dark btn-sm rounded-0 fw-bold px-4 py-2" style="letter-spacing: 1px;">SOLICITAR ORÇAMENTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="hero-subtitle">Maceió - Alagoas</span>
+                    <h1 class="display-3 fw-bold mb-4">Tradição em Alfaiataria. Excelência em Acabamento Têxtil.</h1>
+                    <p class="lead mb-5 fw-light" style="color: #ccc;">Do desenvolvimento de peças exclusivas sob medida à produção e locação de vestuário premium. Alta tecnologia têxtil unida ao cuidado artesanal.</p>
+                    <a href="#servicos" class="btn btn-gold me-3">Conheça os Serviços</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="atelie" class="atelie-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 atelie-text">
+                    <h6 class="text-uppercase mb-3" style="color: var(--st-gold); letter-spacing: 2px; font-weight: 700;">Nossa Estrutura</h6>
+                    <h2 class="display-5 mb-4">Design e Produção no coração de Maceió.</h2>
+                    <p class="mb-4 text-muted">Instalados no bairro da Serraria, somos um complexo têxtil que atende tanto o público final (B2C) com confecção e locação de trajes, quanto o setor corporativo (B2B) através de serviços de maquinário pesado para estamparia e acabamentos.</p>
+                    <p class="text-muted">Nosso compromisso é com a precisão dos cortes, a qualidade impecável dos fios e a pontualidade nas entregas, seja para um traje de gala ou para um lote de uniformes de alta performance.</p>
+                </div>
+                <div class="col-lg-6 img-stack">
+                    <img src="https://images.unsplash.com/photo-1558098329-a11cff621064?auto=format&fit=crop&w=800&q=80" alt="Ateliê Têxtil" class="img-fluid w-100">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="services-section">
+        <div class="container">
+            <div class="text-center mb-5 pb-3">
+                <h6 class="text-uppercase mb-2" style="color: var(--st-gold); letter-spacing: 2px; font-weight: 700;">Expertise Têxtil</h6>
+                <h2 class="display-5">Nossas Unidades de Negócio</h2>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-cut s-icon"></i>
+                        <h4 class="mb-3">Confecção Sob Medida</h4>
+                        <p class="text-muted small mb-0">Ateliê dedicado à modelagem, corte e costura de peças exclusivas de vestuário. Alfaiataria rigorosa e caimento perfeito para clientes exigentes. <em>(CNAE 14.12-6-02)</em></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-tshirt s-icon"></i>
+                        <h4 class="mb-3">Acabamento & Uniformes</h4>
+                        <p class="text-muted small mb-0">Divisão Private Label focada em serviços de acabamento em tecidos. Especialistas em estamparia, sublimação e finalização de camisas de futebol internacionais e vestuário esportivo de alta performance para marcas parceiras. <em>(CNAE 13.40-5-99)</em></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-user-tie s-icon"></i>
+                        <h4 class="mb-3">Locação de Vestuário</h4>
+                        <p class="text-muted small mb-0">Acervo premium de trajes sociais, vestidos e acessórios disponíveis para aluguel. Higienização rigorosa e ajustes personalizados inclusos. <em>(CNAE 77.23-3-00)</em></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="b2b-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <h3>Procurando um parceiro têxtil robusto?</h3>
+                    <p class="lead fw-light mb-0">Nossa capacidade produtiva absorve desde peças únicas feitas à mão até acabamentos de lotes fechados para revendedores e grifes esportivas. Qualidade de maquinário industrial operado com olhar de alfaiate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h6 class="text-uppercase mb-2" style="color: var(--st-gold); letter-spacing: 2px; font-weight: 700;">Atendimento</h6>
+                    <h2 class="mb-4">Agende uma visita ou cotação.</h2>
+                    <p class="text-muted mb-5">Seja para tirar medidas no ateliê ou negociar o acabamento de lote para sua marca esportiva, nossa equipe comercial está à disposição.</p>
+                    
+                    <form onsubmit="event.preventDefault(); alert('Solicitação enviada. Nosso setor de estilo e orçamento entrará em contato em breve.'); this.reset();">
+                        <input type="text" class="form-control" placeholder="Seu Nome ou Empresa" required>
+                        <input type="tel" class="form-control" placeholder="WhatsApp / Telefone" required>
+                        <select class="form-control" required style="color: #666;">
+                            <option value="">Qual a sua necessidade?</option>
+                            <option value="medida">Confecção Sob Medida</option>
+                            <option value="esportivo">Acabamento Têxtil / Uniformes Esportivos</option>
+                            <option value="aluguel">Locação de Trajes</option>
+                        </select>
+                        <button type="submit" class="btn btn-gold w-100 mt-4">ENVIAR MENSAGEM</button>
+                    </form>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="map-box">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15730.0000000000!2d-36.2700000!3d-9.7800000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwNDYnNDguMCJTIDM2wrAxNicxMi4wIlc!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr6">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h5>SERRARIA TÊXTIL</h5>
+                    <p class="mb-4">Ateliê, Acabamento e Locação.</p>
+                    <p class="mb-1"><i class="fas fa-map-pin me-2" style="color: var(--st-gold);"></i> Rua Gen. João José Batista Tubino, 253</p>
+                    <p class="mb-1 ms-4">Serraria - Maceió / AL</p>
+                    <p class="mb-1 ms-4">CEP: 57046-080</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>DADOS DA EMPRESA</h5>
+                    <p class="mb-1"><strong>CNPJ:</strong> 65.624.940/0001-05</p>
+                    <p class="mb-3"><strong>CNAEs:</strong> 14.12-6-02 | 13.40-5-99 | 77.23-3-00</p>
+                    <p class="small">Empresa devidamente formalizada para a produção têxtil, finalização de peças e aluguel de vestuário.</p>
+                </div>
+                <div class="col-lg-4 footer-links text-lg-end">
+                    <h5>LEGAL & PRIVACIDADE</h5>
+                    <a href="politicas.html">Política de Tratamento de Dados (LGPD)</a>
+                    <a href="politicas.html#locacao">Contrato Padrão de Locação</a>
+                    <a href="politicas.html#cookies">Termos de Uso e Cookies</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 Serraria Têxtil Ateliê. Maceió - Alagoas. Todos os Direitos Reservados.
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <div class="mb-3 mb-md-0 text-center text-md-start">
+                <span class="fw-bold d-block mb-1" style="font-family: 'Playfair Display'; font-size: 1.1rem; color: var(--st-gold);">Privacidade no Ateliê</span>
+                <span class="small" style="color: #ccc;">Usamos cookies essenciais para o funcionamento do site. Ao navegar, você concorda com nossa <a href="politicas.html" style="color: white; text-decoration: underline;">Política de Privacidade</a>.</span>
+            </div>
+            <div>
+                <button class="btn btn-sm btn-light rounded-0 px-4 fw-bold" onclick="document.getElementById('cookie-banner').style.display='none'">CONCORDAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
